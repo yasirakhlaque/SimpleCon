@@ -18,7 +18,7 @@ export default function Articles() {
             <Nav />
             <div className="articles-hero">
                 <div className="chakra-image">
-                    <img src="./public/Images/chakra.png" alt="chakra" />
+                    <img src={`Images/chakra.png`} alt="chakra" />
                 </div>
                 <div className="articles-main-header">
                     <h1>Learn Articles like never before</h1>
