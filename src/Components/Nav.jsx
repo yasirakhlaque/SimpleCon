@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Nav.css'; // Create a separate CSS file for Navbar styles
+import './Nav.css';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,12 +22,11 @@ export default function Nav() {
                     </button>
                 </div>
                 <ul className={`nav ${isMenuOpen ? 'active' : ''}`}>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">RESOURCES</a></li>
-                    <li><a href="#">FOR YOU</a></li>
-                    <li><a href="#">GAMES</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/articles">Articles</Link></li>
+                    <li><Link to="/thought">Thought</Link></li>
+                    <li><Link to="/core-features">Core Features</Link></li>
+                    <li><Link to="/constitution-bodies">Constitution Bodies</Link></li>
                 </ul>
                 <button className="sign-in">Sign In</button>
             </nav>

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Playwrite+HR+Lijeva:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.articles {
+    background: linear-gradient(to top, #161313, #302F4D);
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.articles-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 0;
+}
+
+.chakra-image {
+    height: 50vmin;
+    width: 50vmin;
+    max-height: 400px;
+    max-width: 400px;
+    position: relative;
+}
+
+.chakra-image img {
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transform: translateX(-250%) rotate(0deg);
+    animation: image-slide 1.3s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes image-slide {
+    to {
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+.articles-main-header {
+    position: absolute;
+    font-size: clamp(1.2rem, 5vw, 1.9rem);
+    color: aliceblue;
+    text-align: center;
+    padding: 1rem;
+    transform: translateX(150%);
+    animation: text-slide 1.3s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes text-slide {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.article-options {
+    margin: 2rem auto;
+    background-color: #3c2d46;
+    height: auto;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.article-options .overview,
+.stories {
+    border: none;
+    flex: 1;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: 800;
+    color: rgb(65, 63, 63);
+    background-color: #fff;
+    box-shadow: 4px 4px 10px rgb(37, 37, 37);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.articles-data {
+    color: aliceblue;
+    padding: 0 5%;
+    height: auto;
+    width: 100%;
+}
+
+.articles-data .articles-title {
+    margin: 2rem 0;
+    font-size: clamp(1.2rem, 5vw, 2rem);
+}
+
+.articles-data .article-number {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+}
+
+.article-content {
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.overview.active, 
+.stories.active {
+    color: aliceblue;
+    background-color: #2234ff;
+}
+
+@media screen and (max-width: 768px) {
+    .article-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .article-options .overview,
+    .stories {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chakra-image {
+        height: 70vmin;
+        width: 70vmin;
+    }
+
+    .articles-main-header {
+        font-size: 1.2rem;
+    }
+}
