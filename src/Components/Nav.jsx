@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,21 @@ export default function Nav() {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Restore scrolling when menu is closed
+            document.body.style.overflow = 'unset';
+        }
+
+        // Cleanup function to ensure scrolling is restored
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
 
     return (
         <div className="navbar">
